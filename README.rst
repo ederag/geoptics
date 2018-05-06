@@ -83,6 +83,28 @@ In principle, this could allow for other toolkits as well.
 If there is enough interest, a limited ``tkinter`` gui could be revived,
 for display purposes.
 
+From repo
+~~~~~~~~~
+.. code-block:: shell
+
+  $ git clone https://github.com/ederag/GeOptics.git
+  $ cd GeOptics/
+
+Run the ``t_geo.py`` script
+
+.. code-block:: shell
+
+  $ python3 t_geo.py
+
+or, to start with an empty scene,
+
+.. code-block:: shell
+
+  $ python3 -m geoptics
+
+In the menu, select ``file>Open>screenshot.geoptics``;
+the window should now resemble the above screenshot.
+
 Usage
 -----
 
