@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="38cm" height="21cm" viewBox="81 -51 754 403" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="82" y="78" width="222.5" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="82" y="78" width="222.5" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="193.25" y="96">elements.regions.Polycurve</text>
+    <rect style="fill: #ffffff" x="82" y="106" width="222.5" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="82" y="106" width="222.5" height="8"/>
+    <rect style="fill: #ffffff" x="82" y="114" width="222.5" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="82" y="114" width="222.5" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="85" y="128.8">+translate()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="85" y="144.8">+intersection()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="421.8" y="267.2" width="217.9" height="44"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="421.8" y="267.2" width="217.9" height="44"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="530.75" y="284">&lt;&lt;@GOverload("translate")&gt;&gt;</text>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="530.75" y="301.2">qt.regions.Polycurve</text>
+    <rect style="fill: #ffffff" x="421.8" y="311.2" width="217.9" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="421.8" y="311.2" width="217.9" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="424.8" y="326">+g</text>
+    <rect style="fill: #ffffff" x="421.8" y="331.2" width="217.9" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="421.8" y="331.2" width="217.9" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="424.8" y="346">+translate()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="554.8" y="-47.8" width="189.55" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="554.8" y="-47.8" width="189.55" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="649.575" y="-29.8">qt.regions._GPolycurve</text>
+    <rect style="fill: #ffffff" x="554.8" y="-19.8" width="189.55" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="554.8" y="-19.8" width="189.55" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="557.8" y="-5">+e: weakref property</text>
+    <rect style="fill: #ffffff" x="554.8" y="0.2" width="189.55" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="554.8" y="0.2" width="189.55" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="557.8" y="15">+g_translate()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="193.25,168.236 193.25,289.2 421.8,289.2 "/>
+    <polygon style="fill: #ffffff" points="201.25,168.236 193.25,152.236 185.25,168.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="201.25,168.236 193.25,152.236 185.25,168.236 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="554.8,10.2 387,10.2 387,124 311.205,124 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="323.853,119 307.853,124 323.853,129 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="639.7,341.2 833,341.2 833,10.2 751.055,10.2 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="763.703,5.2 747.703,10.2 763.703,15.2 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="554.8,-9.8 530.75,-9.8 530.75,259.49 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="525.75,246.842 530.75,262.842 535.75,246.842 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="664.872,321.2 818,321.2 818,-33.8 744.35,-33.8 "/>
+    <polygon style="fill: #000000" points="639.7,321.2 653.7,316.4 667.7,321.2 653.7,326 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="639.7,321.2 653.7,316.4 667.7,321.2 653.7,326 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="820" y="139.7"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="671.7" y="317.2"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="748.35" y="-37.8"/>
+  </g>
+</svg>

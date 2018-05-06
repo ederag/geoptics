@@ -1,0 +1,17 @@
+Class: Polycurve
+curves:
+- Class: Segment
+  M1: {x: 70, y: 60}
+  M2: {x: 70, y: 190}
+- Class: Segment
+  M1: {x: 70, y: 190}
+  M2: {x: 110, y: 190}
+- Class: Arc
+  M1: {x: 110, y: 190}
+  M2: {x: 110, y: 60}
+  tangent: {x: 10, y: -20}
+- Class: Segment
+  M1: {x: 110, y: 60}
+  M2: {x: 70, y: 60}
+n: 1.5
+tag: null

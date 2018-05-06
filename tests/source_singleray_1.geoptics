@@ -1,0 +1,9 @@
+Class: SingleRay
+rays:
+- parts:
+  - line:
+      p: {x: 10, y: 20}
+      u: {x: 108, y: 50}
+    n: 1.5
+    s: 0.9020780451973734
+tag: null

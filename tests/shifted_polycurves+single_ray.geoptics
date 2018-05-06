@@ -1,0 +1,61 @@
+Scene:
+  Regions:
+  - Class: Polycurve
+    curves:
+    - Class: Segment
+      M1: {x: 70, y: 60}
+      M2: {x: 70, y: 190}
+    - Class: Segment
+      M1: {x: 70, y: 190}
+      M2: {x: 110, y: 190}
+    - Class: Arc
+      M1: {x: 110, y: 190}
+      M2: {x: 110, y: 60}
+      tangent: {x: 10, y: -20}
+    - Class: Segment
+      M1: {x: 110, y: 60}
+      M2: {x: 70, y: 60}
+    n: 1.5
+    tag: null
+  - Class: Polycurve
+    curves:
+    - Class: Segment
+      M1: {x: 78.0, y: 72.0}
+      M2: {x: 78.0, y: 202.0}
+    - Class: Segment
+      M1: {x: 78.0, y: 202.0}
+      M2: {x: 118.0, y: 202.0}
+    - Class: Arc
+      M1: {x: 118.0, y: 202.0}
+      M2: {x: 118.0, y: 72.0}
+      tangent: {x: 10, y: -20}
+    - Class: Segment
+      M1: {x: 118.0, y: 72.0}
+      M2: {x: 78.0, y: 72.0}
+    n: 1.5
+    tag: null
+  Sources:
+  - Class: SingleRay
+    rays:
+    - parts:
+      - line:
+          p: {x: 10, y: 20}
+          u: {x: 108, y: 50}
+        n: 1.0
+        s: 0.8
+      - line:
+          p: {x: 96.4, y: 60.0}
+          u: {x: 0.6049779380798941, y: 0.7962422335172883}
+        n: 1.5
+        s: 54.583944777944744
+      - line:
+          p: {x: 129.4220823640278, y: 103.46204210417505}
+          u: {x: -0.18300784680868382, y: 0.9831114524846354}
+        n: 1.5
+        s: 100.23070898705144
+      - line:
+          p: {x: 111.07907612819972, y: 202.0}
+          u: {x: -0.2745117702130257, y: 0.9615837394707291}
+        n: 1.0
+        s: 100
+    tag: null

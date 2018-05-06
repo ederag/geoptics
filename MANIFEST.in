@@ -1,0 +1,12 @@
+# stuff we need to include into the sdist is handled automatically by
+# setuptools_scm - it includes all git-committed files.
+# but we want to exclude some committed files/dirs not needed in the sdist:
+
+exclude .hgignore
+exclude .hgtags
+
+# these ones were used for testing purposes
+exclude t_geo.py
+exclude t_geo2.py
+exclude try.geoptics
+exclude try2.geoptics

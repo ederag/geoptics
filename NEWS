@@ -1,0 +1,238 @@
+Changes in 0.20
+
+- [new] use tox for tests
+- [new] Point and Vectors are iterable: x, y = P
+- [new] install geoptics script
+- [change] optim: Point and Vector use __slots__
+- [change] test translate
+- [change] use flake8 instead of pep8+pyflakes (more flexibility)
+- [change] use LICENSE.txt instead of COPYING
+- [change] dynamically load the qapp fixture, only for guis.qt tests
+- [change] move configuration to setup.cfg
+- [change] yaml.load => yaml.safe_load
+- [change] remove tag keyword in graphical objects
+- [change] increase zoom range
+- [change] better zoom and sceneRect
+- [change] outgoing rays are now infinite
+- [change] ray propagation is in elements.rays
+- [change] rename Load to Open in menu
+- [bugfix] fix handle position with move restriction on
+- [bugfix] workaround Qt disconnect bug.
+- [bugfix] in-place save
+
+
+Changes in 0.19
+
+- [new] in conf.py, choice between user or developer audience
+- [new] propagation across overlapping regions
+- [new] Save As
+- [new] pep8 + pyflakes + doctests + lots of other tests
+- [new] separate .from_config() constructor
+- [new] scene.add(config)
+- [new] Beam.N_inter can be changed from command line
+- [new] import scene and elements from file (without reset)
+- [new] pyreverse to draw classes and packages graphs
+- [change] region.intersection return [] instead of None, by default
+- [change] switch to sphinx_rtd_theme
+- [change] _GPolycurve path is now relative to the region first point
+- [change] use autodoc_default_flags instead of specifying flags in each .rst
+- [change] load now clears the scene
+- [change] .dump() => .config property (getter and setter)
+- [change] move vector.py to elements/
+- [change] remove "config=" keywords
+- [change] remove "scene=" from Ray
+- [change] "load" renamed to "open"
+- [change] rename "CounterPart" => "GCounterPart"
+- [change] moved find_classes to shared/tools.py
+- [change] "propagate_ray" to private "_propagate_ray"
+- [change] namedtuple for intersection
+- [bugfix] propagation without any intersection
+
+Changes in 0.18
+
+- [new] Integration tests, in the py.test framework
+
+Changes in 0.17
+
+- [change] Clarification: move code to _G<class>.g_<method>
+- [change] Use import_module instead of exec
+- [change] sphinx-build-2.7 => sphinx-build-3.4
+- [change] Use the build-in python > 3.4 weakref.WeakMethod
+- [change] increase maximum number of rays parts to 20
+
+- [bugfix] Translate works again from ipython
+- [bugfix] Deselection raised exception when handle did not exist yet
+- [bugfix] Fix encoding of t_geo.py
+
+Changes in 0.16
+
+- [change] Migration to python3, dropped python2 compatibility
+
+- [change] removed x.show() methods. Use print(x) instead, or print(x.dump())
+
+Changes in 0.15
+
+- [new] new filename argument to gui.load()
+- [new] logging (to stderr for now)
+
+- [bugfix] weakref to prevent circular dependencies (prevent crashes)
+- [bugfix] prepareGeometryChange() to preventcorrupted BSP tree (crashes)
+- [bugfix] ipython and qt5 compatibility
+- [change] version control of *.geoptics files
+- [change] load regions before sources
+- [change] removed the "config=" keyword to constructors
+- [change] removed reference to gui in _GScene
+           introduce _GScene.active_view (preparing for multiple views, later)
+- [change] self.e is a read-only property
+           _G* that are counterparts to an element inherit 
+           also from .counterpart.Counterpart
+- [change] LineHandle is no longer a QGraphicsItem
+           This simplifies caller code (no weakref),
+           and fixes a selection bug (the shape was wrong)
+           
+Changes in 0.14
+
+- [change] upgrade from PyQt4 to PyQt5
+
+Changes in 0.13
+
+- [new] debug.py collection of debugging helper functions
+
+- [change] Use composition instead of multiple inheritance:
+           all overloaded elements have a .g attribute
+           that is a separate Qt class,
+           with names starting with "_G".
+           This prevents names clashing between elements and Qt methods
+- [change] rename signal_position_changed => signal_mouse_position_changed
+- [change] signal/slot for moved element
+- [change] Handles do not store scene, and use scene() instead (Qt style)
+- [change] remove scene from keywords
+- [change] all elements are added in an unified way
+- [change] It is an error to add an element to scene, if already present
+- [change] keywords arguments for Region
+- [change] Remove ray_class argument 
+           ray_class is stored at the Source creation, 
+           from the Scene class_map
+- [change] remove SingleRay __repr__ (use dump instead)
+- [bugfix] _Gsource has the same shape as its Rays. 
+           (Partial fix for items being still selected 
+            after clicking on background)
+
+Changes in 0.12
+
+- [new] load/dump Beam
+- [new] translate method for all elements now
+- [new] __repr___ for Part and Segment
+
+- [change] all graphical objects now inherit from corresponding elements
+- [change] self.e removed from all graphical objects
+- [change] self.g removed from all elements
+- [change] gui.is_master removed
+           control from both gui and IPython now works seamlessly without it
+- [change] rename geo => scene, and move it to elements
+- [change] geo(=>scene).rays removed
+           all rays are handled by their source
+           similarly, rays must be added only through their source
+- [change] For consistency, removed SingleRay.ray
+           Use SingleRay.rays[0] instead
+- [change] Scene.add now return None
+- [change] remove gui.region_idx
+- [change] Starting point of Polycurve must be done by its new start() method,
+           not at the instanciation step any more.
+- [change] rename elements/ray.py to plural (rays.py) for consistency
+- [change] class names are automatically used for dump/save
+- [change] elements see only their scene, not gui any more
+- [change] updated doc for better IPython interface,
+           moved to qt/__ini__.py
+- [change] Automatically import submodules of elements 
+           into the elements subpackage namespace
+- [change] removed region.move(), replaced by a translate() overload
+- [bugfix] from __future__ import division in all files
+           (fix missed boundaries in some cases)
+- [bugfix] hide items before removal
+           (workaround spurious remnants)
+           
+Changes in 0.11
+
+- [change] All classes are new style
+- [change] a single 'add' function for all elements
+- [change] get rid of the "super" idiom
+- [change] gui/ => guis/
+
+Changes in 0.10
+
+- [new] Sources (SingleRay, Beam)
+- [new] Ray can be created with default values
+- [new] Point.translate(dx=..., dy=...) syntax [**make doc before release**]
+- [change] use sip.setapi('QVariant', 2) so that
+           any Qt method that returns a QVariant will return 
+           a python type instead
+           there is caveat when using QSettings, 
+           cf. gui.qt module contents, in the geoptics documentation
+- [change] use sip.setapi('QString', 2) 
+           to ensure that no QString are used (deprecated)
+- [change] all rays now have a source
+- [change] n is not needed anymore for rays, since it is determined at runtime
+- [change] use scene current position instead of relative displacement 
+           for h_p0 in PointHandle
+- [change] default s0 changed from 1 to 100 in Ray
+- [bugfix] Items deletion works again in gui
+
+Changes in 0.9
+
+- [change] use signal/slot mecanism for Handles
+
+Changes in 0.8
+
+- [new] documentation with sphinx
+- [new] 'python -m geoptics' works
+- [new] ray can start inside a region now
+- [change] specified licence: GPLv3
+- [change] split big files in chunks, for maintenance purpose
+- [change] try to be pep8 compliant
+
+Changes in 0.7
+
+- [new] persistent geometry settings 
+        (position and size of the main window, positon of toolbars)
+- [new] position indicator
+- [new] suppression of items
+- [new] select/unselect all
+- [new] constrained moves
+- [change] use standard shortcuts
+- [experimental] panning with middle mouse button (works only for large scenes)
+
+Changes in 0.6
+
+- [change] handles size is in pixels now, 
+           and the line handle has a fixed size, independent on the scale
+- [new] Tool to restrict movements along x or y only
+- [new] Handle total internal reflection
+- [change] dump all parts of rays
+- [change] use theme icons
+- [change] reorder menus, dispay in Tools menu
+  
+Changes in 0.5
+
+- save/load
+- invert y axis for display (x right, y up)
+- zoom by mouse wheel
+- can be launched from IPython
+- do not change thicknesses upon scaling
+
+Changes in 0.4.1
+
+- avoid unnecessary propagations
+- [bugfix] sometimes when crossing boundaries the refractive index was not updated
+
+Changes in 0.4
+
+- add a new Qt gui, which will be the default one
+- Rays as well as regions can be moved
+
+Changes in 0.3 (since beginnning):
+
+- TTk (tkinter) version
+- allow to set region with line and arc boundaries, rays,
+  and see propagation of rays
+- allow to move regions but not rays
