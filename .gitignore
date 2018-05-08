@@ -107,3 +107,6 @@ ENV/
 .kateproject
 .kateproject.d/
 .kdev4/
+geoptics.kdev4
+
+
