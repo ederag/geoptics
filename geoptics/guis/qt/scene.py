@@ -31,11 +31,12 @@ from geoptics.shared.tools import find_classes
 from . import rays
 from . import regions
 from . import sources
-from .counterpart import GCounterPart
+from .counterpart import g_counterpart
 from .handles import PointHandle
 
 
-class _GScene(GCounterPart, QGraphicsScene):
+@g_counterpart
+class _GScene(QGraphicsScene):
 	"""The graphical class corresponding to :class:`.Scene`.
 	
 	Args:
@@ -54,8 +55,8 @@ class _GScene(GCounterPart, QGraphicsScene):
 	#: Signal emitted when selected items should be removed
 	#: **slot args:** ()
 	
-	def __init__(self, element=None, **kwargs):
-		GCounterPart.__init__(self, element)
+	# note: @g_counterpart will add a keyword argument, "element"
+	def __init__(self, **kwargs):
 		QGraphicsScene.__init__(self, **kwargs)
 		
 		# view linked to this scene, currently under mouse

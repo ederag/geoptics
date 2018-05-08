@@ -29,35 +29,44 @@ import logging
 logger = logging.getLogger(__name__)   # noqa: E402
 import weakref
 from functools import wraps
-from inspect import getmembers, getmodule, isclass
+from inspect import getmembers, getmodule
 
 
-class GCounterPart(object):
-	"""Graphical counterpart to an element.
+# from https://stackoverflow.com/a/682242/3565696
+def g_counterpart(original_class):
+	"""Enhance a graphical class to be a counterpart to an element.
 	
-	This is to be used with multiple inheritance,
-	for instance
-	``Mixin(GCounterPart, QGraphicsItem)``
+	Add ``element`` to the __init__ keyword arguments.
+	Add the ``.e`` property to access the element.
 	
 	Note:
-		Make sure to inherit from the Qt object *after* GCounterPart,
-		so that the Qt class is *after* :class:`GCounterPart` in `self.__mro__`.
-		otherwise when Qt calls :meth:`super().__init__`,
-		it might find :meth:`GCounterPart.__init__`.
-	
+		This function is intended to be used as a decorator.
+		Decorators should be commutative.
+		Hence element is a keyword - not positional - argument.
 	"""
 	
-	def __init__(self, element):
+	# make copy of original __init__, so we can call it without recursion
+	orig_init = original_class.__init__
+	
+	@wraps(orig_init)
+	def __init__(self, *args, element=None, **kws):
 		# Explicitly avoid cyclic dependency
 		# between graphical item and python element.
 		self._e_wr = weakref.ref(element)
 		# self.e can now be used to get this element
 		# (read only property, defined below)
+		
+		# call the original __init__
+		orig_init(self, *args, **kws)
 	
 	@property
 	def e(self):  # noqa: D401
 		"""The corresponding element."""
 		return self._e_wr()
+	
+	original_class.__init__ = __init__
+	original_class.e = e
+	return original_class
 
 
 # ---------------------------------------------------------------------------
@@ -81,9 +90,16 @@ def _g_overload(cls, names):
 	
 	# look for the corresponding _G class in the same module as cls
 	module = getmodule(cls)
-	module_classes = dict(getmembers(module, isclass))
+	# can not use getmembers(module, isclass)
+	# because sphinx autodoc_mock_imports are not classes any longer
+	module_classes = dict(getmembers(module))
 	g_cls_name = "_G{}".format(cls.__name__)
-	g_cls = module_classes[g_cls_name]
+	try:
+		g_cls = module_classes[g_cls_name]
+	except KeyError:
+		raise KeyError("could not find the {} counterpart '{}' in "
+		               "module {} "
+		               "holding {}".format(cls, g_cls_name, module, module_classes))
 	
 	for name in names:
 		# the g_<name> method of the _G<cls> class
@@ -91,7 +107,8 @@ def _g_overload(cls, names):
 		
 		# store g_func in a keyword default value,
 		# otherwise the last g_func is used
-		@wraps(g_func)
+		# wraps here is not compatible with sphinx autodoc_mock_imports
+		#@wraps(g_func)
 		def func(self, *args, g_func=g_func, **kwargs):
 			return g_func(self.g, *args, **kwargs)
 		

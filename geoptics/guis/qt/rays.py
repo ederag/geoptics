@@ -35,19 +35,19 @@ from PyQt5.QtWidgets import (
 
 from geoptics import elements
 
-from .counterpart import GCounterPart, GOverload
+from .counterpart import GOverload, g_counterpart
 
 
 # -------------------------------------------------------------------------
 #                             Ray
 # -------------------------------------------------------------------------
 
-
-class _GRay(GCounterPart, QGraphicsPathItem):
+@g_counterpart
+class _GRay(QGraphicsPathItem):
 	"""The graphical class corresponding to :class:`.Ray`."""
 	
-	def __init__(self, element=None, **kwargs):
-		GCounterPart.__init__(self, element)
+	# note: @g_counterpart will add a keyword argument, "element"
+	def __init__(self, **kwargs):
 		QGraphicsPathItem.__init__(self, **kwargs)
 		
 		self.setAcceptHoverEvents(True)

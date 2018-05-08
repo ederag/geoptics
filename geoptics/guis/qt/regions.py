@@ -34,15 +34,15 @@ from PyQt5.QtWidgets import QGraphicsItem, QGraphicsPathItem
 
 from geoptics import elements
 
-from .counterpart import GCounterPart, GOverload
+from .counterpart import GOverload, g_counterpart
 
 
 # ---------------------------------------------------------------------------
 #                                  Region
 # ---------------------------------------------------------------------------
 
-
-class _GPolycurve(GCounterPart, QGraphicsPathItem):
+@g_counterpart
+class _GPolycurve(QGraphicsPathItem):
 	"""Graphical class corresponding to :class:`.Polycurve`.
 	
 	.. note::
@@ -59,8 +59,8 @@ class _GPolycurve(GCounterPart, QGraphicsPathItem):
 		first issue a :meth:`reset_move()`
 	"""
 	
-	def __init__(self, element=None, **kwargs):
-		GCounterPart.__init__(self, element)
+	# note: @g_counterpart will add a keyword argument, "element"
+	def __init__(self, **kwargs):
 		QGraphicsPathItem.__init__(self, **kwargs)
 		
 		# pen

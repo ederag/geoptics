@@ -25,12 +25,13 @@ from PyQt5.QtWidgets import QGraphicsItem
 
 from geoptics import elements
 
-from .counterpart import GCounterPart
+from .counterpart import g_counterpart
 from .handles import LineHandle
 
 
 # note: making it a QGraphicsItemGroup would always move the whole thing
-class _GSource(GCounterPart, QGraphicsItem):
+@g_counterpart
+class _GSource(QGraphicsItem):
 	"""The corresponding graphical class to sources.
 	
 	Args:
@@ -39,8 +40,8 @@ class _GSource(GCounterPart, QGraphicsItem):
 			such as :class:`.guis.qt.sources.Beam`.
 	"""
 	
-	def __init__(self, element=None, zvalue=100, **kwargs):
-		GCounterPart.__init__(self, element)
+	# note: @g_counterpart will add a keyword argument, "element"
+	def __init__(self, zvalue=100, **kwargs):
 		QGraphicsItem.__init__(self, **kwargs)
 		
 		# no need to implement paint()
