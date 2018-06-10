@@ -90,6 +90,10 @@ From repo
   $ git clone https://github.com/ederag/GeOptics.git
   $ cd GeOptics/
 
+
+Usage
+-----
+  
 Run the ``t_geo.py`` script
 
 .. code-block:: shell
@@ -105,8 +109,16 @@ or, to start with an empty scene,
 In the menu, select ``file>Open>screenshot.geoptics``;
 the window should now resemble the above screenshot.
 
-Usage
------
+For an interactive command line control, there is an `interface with IPython`_.
+
+
+Documentation
+-------------
+
+Documentation can be found online on `geoptics.readthedocs.io`_,
+or built locally by going into the docs/ directory and issuing ``make html``.
+
+
 
 Contributing
 ------------
@@ -168,6 +180,8 @@ distributed under the terms of the "`GPL3 or later`_" license.
 
 
 .. _GPL3 or later: https://www.gnu.org/licenses/gpl.html
+.. _geoptics.readthedocs.io: https://geoptics.readthedocs.io/
+.. _interface with IPython: https://geoptics.readthedocs.io/en/latest/geoptics.guis.qt.html#interface-with-ipython
 .. _OpenRayTrace : https://github.com/BenFrantzDale/OpenRayTrace
 .. _pyoptics: https://github.com/campagnola/pyoptics
 .. _pyOpTools: https://github.com/cihologramas/pyoptools
