@@ -8,7 +8,11 @@
 
 """
 
-__version__ = "0.19"
+# keep this at the top (simpler .bumpversion.cfg)
+# and do not modify directly; use
+# bump2version minor
+# https://github.com/c4urself/bump2version
+__version__ = "0.20"
 
 
 import logging
