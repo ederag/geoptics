@@ -125,7 +125,13 @@ Whether advantages dominate is not clear at the moment, but here it is.
 Forks are welcome.
 """
 
-import sip
+try:
+	# new location for sip
+	# https://www.riverbankcomputing.com/static/Docs/PyQt5/incompatibilities.html#pyqt-v5-11
+	from PyQt5 import sip
+except ImportError:
+	import sip
+
 sip.setapi('QVariant', 2)
 # this one is not used yet
 # but it will ensure that QString are not used (deprecated)
