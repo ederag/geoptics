@@ -389,7 +389,9 @@ class Gui(QMainWindow):
 		settings.beginGroup("MainWindow")
 		self.resize(settings.value("size", QSize(400, 400), type=QSize))
 		self.move(settings.value("pos", QPoint(10, 10), type=QPoint))
-		self.restoreState(settings.value("MainwindowState"))
+		old_settings = settings.value("MainwindowState")
+		if old_settings:
+			self.restoreState(old_settings)
 		settings.endGroup()
 	
 	def select_all(self):
