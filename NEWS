@@ -1,3 +1,11 @@
+Changes since 0.20
+
+- [new] define editor defaults in .editorconfig (https://EditorConfig.org)
+- [change] migration from mercurial to git revsion system
+- [change] use decorators instead of multiple inheritance
+           for graphical counterpart
+- [bugfix] restore only existing configurations (important for new users)
+
 Changes in 0.20
 
 - [new] use tox for tests
