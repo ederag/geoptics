@@ -24,7 +24,7 @@ from geoptics.elements.vector import Point, Vector
 
 @pytest.fixture()
 def arc():
-	"""Return aeneric Arc."""
+	"""Return a generic Arc."""
 	M1 = Point(10, 20)
 	M2 = Point(30, 60)
 	tangent = Vector(10, -20)
