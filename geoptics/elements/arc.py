@@ -20,7 +20,7 @@
 """Define an arc of a circle."""
 
 
-from math import pi, sqrt
+from math import sqrt
 
 from geoptics.elements.vector import Vector_M1M2
 
@@ -86,13 +86,14 @@ class Arc(object):
 		"""
 		theta_i = Vector_M1M2(self.C, M).theta_x()
 		if self.theta2 < self.theta1:
-			if (self.theta2 < theta_i) and (theta_i < self.theta1):
+			if self.theta2 < theta_i < self.theta1:
 				return not self.ccw
+			else:
+				return self.ccw
 		else:
-			if (
-			   ((self.theta2 < theta_i) and (theta_i <= pi)) or
-			   ((theta_i > (-pi)) and (theta_i < self.theta1))
-			   ):
+			if self.theta1 < theta_i < self.theta2:
+				return self.ccw
+			else:
 				return not self.ccw
 					
 	def intersection(self, other, sign_of_s=0):

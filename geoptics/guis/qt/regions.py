@@ -82,18 +82,24 @@ class _GPolycurve(QGraphicsPathItem):
 		arc = self.e.curves[-1]
 		C = arc.C
 		w = h = 2 * arc.r
+		span = arc.theta2 - arc.theta1
+		# span is defined modulo 2pi.
+		if span < 0 and arc.ccw:
+			# in the scene coordinates, ccw mean positive span
+			span = 2 * pi + span
+		if span > 0 and not arc.ccw:
+			span = span - 2 * pi
+		
 		# the graphicsview has an indirect coordinates system => angles are opposite
 		# this should be changed when working in scene coordinates
-		theta1 = - arc.theta1 * 180.0 / pi
-		#print "theta_1 = ", theta1
-		theta2 = - arc.theta2 * 180.0 / pi
-		#print "theta_2 = ", theta2
+		qt_theta1 = -arc.theta1 * 180.0 / pi
+		qt_span = -span * 180.0 / pi
+		
 		path = self.path()
-		#path.arcMoveTo(C.x - arc.r, C.y - arc.r, w, h, theta1)
 		# Qt paths are relative to the first point of the region
 		M0 = self.e.M[0]
 		path.arcTo(C.x - M0.x - arc.r, C.y - M0.y - arc.r,
-		           w, h, theta1, theta2 - theta1)
+		           w, h, qt_theta1, qt_span)
 		self.setPath(path)
 	
 	def g_add_line(self, M_next):
