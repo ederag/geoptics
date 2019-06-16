@@ -204,7 +204,10 @@ class Vector(object):
 		return (self.x * other.y - self.y * other.x) == 0
 	
 	def theta_x(self):
-		"""Return the inclination angle over the x axis, in rad."""
+		"""Return the inclination angle over the x axis.
+		
+		Result in the ]-pi, pi] interval.
+		"""
 		return atan2(self.y, self.x)
 			
 	def __imul__(self, other):
