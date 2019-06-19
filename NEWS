@@ -5,6 +5,7 @@ Changes since 0.20
 - [change] use decorators instead of multiple inheritance
            for graphical counterpart
 - [bugfix] restore only existing configurations (important for new users)
+- [bugfix] correct arc intersections for all arc orientations
 
 Changes in 0.20
 
