@@ -20,7 +20,7 @@
 """Define an arc of a circle."""
 
 
-from math import pi, sqrt
+from math import sqrt
 
 from geoptics.elements.vector import Vector_M1M2
 
@@ -44,7 +44,7 @@ class Arc(object):
 		self.r = self.radius()
 		self.theta1 = Vector_M1M2(self.C, self.M1).theta_x()
 		self.theta2 = Vector_M1M2(self.C, self.M2).theta_x()
-		self.ccw = self.ccw()
+		self.ccw = self._get_ccw()
 	
 	def center(self):
 		"""Return the arc center."""
@@ -74,7 +74,7 @@ class Arc(object):
 		"""Return the arc radius of curvature."""
 		return Vector_M1M2(self.M1, self.center()).norm()
 	
-	def ccw(self):
+	def _get_ccw(self):
 		"""Return true if the arc goes from M1 to M2 ccw."""
 		CM1 = Vector_M1M2(self.C, self.M1)
 		return ((CM1.x * self.tangent.y - CM1.y * self.tangent.x) > 0)
@@ -86,13 +86,14 @@ class Arc(object):
 		"""
 		theta_i = Vector_M1M2(self.C, M).theta_x()
 		if self.theta2 < self.theta1:
-			if (self.theta2 < theta_i) and (theta_i < self.theta1):
+			if self.theta2 < theta_i < self.theta1:
 				return not self.ccw
+			else:
+				return self.ccw
 		else:
-			if (
-			   ((self.theta2 < theta_i) and (theta_i <= pi)) or
-			   ((theta_i > (-pi)) and (theta_i < self.theta1))
-			   ):
+			if self.theta1 < theta_i < self.theta2:
+				return self.ccw
+			else:
 				return not self.ccw
 					
 	def intersection(self, other, sign_of_s=0):

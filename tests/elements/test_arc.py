@@ -19,15 +19,16 @@
 import pytest
 
 from geoptics.elements.arc import Arc
+from geoptics.elements.line import Line
 from geoptics.elements.vector import Point, Vector
 
 
 @pytest.fixture()
 def arc():
-	"""Return aeneric Arc."""
+	"""Return a generic Arc."""
 	M1 = Point(10, 20)
-	M2 = Point(30, 60)
-	tangent = Vector(10, -20)
+	M2 = Point(50, 30)
+	tangent = Vector(10, 20)
 	return Arc(M1, M2, tangent)
 
 
@@ -37,3 +38,33 @@ def test_config(arc):
 	assert 'M1' in arc_config
 	assert 'M2' in arc_config
 	assert 'tangent' in arc_config
+
+
+def test_orientations():
+	# left to right, arc above segment
+	arc = Arc(Point(10, 20), Point(50, 30), Vector(10, 20))
+	assert arc.ccw is False
+	line = Line(Point(30, 10), Vector(10, 30))
+	intersections = arc.intersection(line, sign_of_s=1)
+	assert len(intersections) == 1
+	
+	# right to left, arc above segment
+	arc = Arc(Point(50, 30), Point(10, 20), Vector(-10, 20))
+	assert arc.ccw is True
+	line = Line(Point(30, 10), Vector(10, 30))
+	intersections = arc.intersection(line, sign_of_s=1)
+	assert len(intersections) == 1
+	
+	# left to right, arc below segment
+	arc = Arc(Point(10, 20), Point(50, 30), Vector(10, -20))
+	assert arc.ccw is True
+	line = Line(Point(30, 10), Vector(10, -30))
+	intersections = arc.intersection(line, sign_of_s=1)
+	assert len(intersections) == 1
+	
+	# right to left, arc below segment
+	arc = Arc(Point(50, 30), Point(10, 20), Vector(-10, -20))
+	assert arc.ccw is False
+	line = Line(Point(30, 20), Vector(10, -30))
+	intersections = arc.intersection(line, sign_of_s=1)
+	assert len(intersections) == 1
