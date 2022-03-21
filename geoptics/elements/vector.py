@@ -230,6 +230,9 @@ class Vector(object):
 		else:
 			return Vector(self.x * other, self.y * other)
 	
+	def __neg__(self):
+		return Vector(-self.x, -self.y)
+	
 	def __rmul__(self, other):
 		return self.__mul__(other)
 	
