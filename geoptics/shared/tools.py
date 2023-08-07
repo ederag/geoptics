@@ -19,8 +19,8 @@ def find_classes(module):
 	# note: a lambda would be prettier here, but
 	# pep8: E731 do not assign a lambda expression, use a def
 	def predicate(member, module=module):
-		return (inspect.isclass(member) and
-		        member.__module__ == module.__name__)
+		return (inspect.isclass(member)
+		        and member.__module__ == module.__name__)
 	
 	# getmembers return a list of tuples like
 	# [('Beam', <class 'geoptics.guis.qt.sources.Beam'>), ...]

@@ -272,8 +272,8 @@ class Ray(object):
 					n1 = self.parts[-1].n
 					# u2N^2
 					u2N2 = (
-					  ((n2 / n1) ** 2 - 1) * u1T ** 2 +
-					  (n2 / n1) ** 2 * u1N ** 2
+					  ((n2 / n1) ** 2 - 1) * u1T ** 2
+					  + (n2 / n1) ** 2 * u1N ** 2
 					)
 					if u2N2 >= 0:
 						# refraction

@@ -183,9 +183,9 @@ class _GScene(QGraphicsScene):
 		
 		for item in self.items():
 			if (
-			   item.isSelected() and
+			   item.isSelected()
 			   # Rays and PointHandles are removed by their parent
-			   not isinstance(item, (PointHandle, rays._GRay))
+			   and not isinstance(item, (PointHandle, rays._GRay))
 			   ):
 				# workaround children remaining visible (Qt 4.8.6)
 				# item.prepareGeometryChange()  # does not work either

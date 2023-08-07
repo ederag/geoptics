@@ -153,8 +153,8 @@ class PointHandle(QGraphicsEllipseItem):
 			total_dx = new_pos.x() - self.position_before_move.x()
 			total_dy = new_pos.y() - self.position_before_move.y()
 			if (
-				(not self.ignore_move_restrictions) and
-				self.scene().move_restrictions_on
+				(not self.ignore_move_restrictions)
+				and self.scene().move_restrictions_on
 			   ):
 				if abs(total_dx) >= abs(total_dy):
 					# move along x only

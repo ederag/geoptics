@@ -115,12 +115,12 @@ class Arc(object):
 			s_list = []
 			a = other.u.x ** 2 + other.u.y ** 2
 			if a != 0:
-				b = (other.u.x * (other.p.x - self.C.x) +
-				     other.u.y * (other.p.y - self.C.y)
+				b = (other.u.x * (other.p.x - self.C.x)
+				     + other.u.y * (other.p.y - self.C.y)
 				     )
-				c = ((other.p.x - self.C.x) ** 2 +
-				     (other.p.y - self.C.y) ** 2 -
-				     self.r ** 2
+				c = ((other.p.x - self.C.x) ** 2
+				     + (other.p.y - self.C.y) ** 2
+				     - self.r ** 2
 				     )
 				# reduced discriminant
 				delta = b ** 2 - a * c

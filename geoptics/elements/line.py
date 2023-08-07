@@ -158,11 +158,13 @@ class Line(object):
 			if other.u.colinear(self.u):
 				result = []
 			else:
-				s = ((
-				      (self.p.x - other.p.x) * self.u.y -
-				      (self.p.y - other.p.y) * self.u.x
-				     ) /
-				      (other.u.x * self.u.y - other.u.y * self.u.x))
+				s = (
+				     (
+				      (self.p.x - other.p.x) * self.u.y
+				      - (self.p.y - other.p.y) * self.u.x
+				     )
+				     / (other.u.x * self.u.y - other.u.y * self.u.x)
+				    )
 				if (sign_of_s == 0 and s != 0) or (s * sign_of_s > 0):
 					Mi = Point(other.p.x + s * other.u.x,
 					           other.p.y + s * other.u.y)
