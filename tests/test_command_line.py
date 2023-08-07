@@ -1,15 +1,15 @@
 def test_translate_roundtrip(scene_polycurve_beam_singleray):
-	assert(len(scene_polycurve_beam_singleray.regions) > 0)
+	assert len(scene_polycurve_beam_singleray.regions) > 0
 	rp1 = scene_polycurve_beam_singleray.regions[0]
 	cfg_orig = rp1.config
 	dx = 10
 	dy = 20
 	rp1.translate(dx=dx, dy=dy)
 	cfg_current = rp1.config
-	assert(cfg_orig != cfg_current)
+	assert cfg_orig != cfg_current
 	rp1.translate(dx=-dx, dy=-dy)
 	cfg_current = rp1.config
-	assert(cfg_orig == cfg_current)
+	assert cfg_orig == cfg_current
 
 
 class TestConfig:

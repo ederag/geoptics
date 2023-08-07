@@ -165,7 +165,7 @@ class Polycurve(Region):
 				tangent = Vector.from_config(curve_config['tangent'])
 				region.add_arc(M_next, tangent)
 			else:
-				raise(NotImplementedError)
+				raise NotImplementedError
 		# normally, the stored polycurves are already closed
 		# (the last point is equal to the first one)
 		# no need for a final close()

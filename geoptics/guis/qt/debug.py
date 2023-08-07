@@ -110,7 +110,7 @@ def check_source_rays_consistency(source):
 	# all ray elements should have a their .g in scene
 	g_scene_items = source.scene.g.items()
 	for ray in source.rays:
-		assert(ray.g in g_scene_items)
+		assert ray.g in g_scene_items
 	# all source.g children should have a .e that belongs to the source element
 	for item in source.g.childItems():
 		if not isinstance(item, PointHandle):

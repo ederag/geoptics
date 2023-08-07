@@ -113,7 +113,7 @@ class GraphicsView(QGraphicsView):
 		# dx, dy are not relevant for vectors
 		t = self.transform()
 		# we should not have any shear or rotation
-		assert(not t.isRotating() and t.m13() == 0 and t.m23() == 0)
+		assert not t.isRotating() and t.m13() == 0 and t.m23() == 0
 		# scaling factors
 		sx = t.m11()
 		sy = t.m22()
@@ -128,7 +128,7 @@ class GraphicsView(QGraphicsView):
 		# direct inversion should be faster
 		t = self.transform()
 		# we should not have any shear or rotation
-		assert(not t.isRotating() and t.m13() == 0 and t.m23() == 0)
+		assert not t.isRotating() and t.m13() == 0 and t.m23() == 0
 		# scaling factors
 		sx = t.m11()
 		sy = t.m22()

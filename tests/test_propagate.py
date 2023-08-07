@@ -31,6 +31,6 @@ def test_propagate(scene, region_polycurve_1, source_singleray_1):
 	"""Test ray propagation."""
 	scene.propagate()
 	ray = source_singleray_1.rays[0]
-	assert(len(ray.parts) == 4)
+	assert len(ray.parts) == 4
 	# last part should be outside
-	assert(ray.parts[-1].n == scene.background.n)
+	assert ray.parts[-1].n == scene.background.n

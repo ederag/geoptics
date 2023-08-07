@@ -23,27 +23,27 @@ def test_translate(scene, region_polycurve_1):
 	rp.translate(dx=10, dy=20)
 	
 	# Segment
-	assert(rp.curves[0].M1.x == 80)
-	assert(rp.curves[0].M1.y == 80)
-	assert(rp.curves[0].M2.x == 80)
-	assert(rp.curves[0].M2.y == 210)
+	assert rp.curves[0].M1.x == 80
+	assert rp.curves[0].M1.y == 80
+	assert rp.curves[0].M2.x == 80
+	assert rp.curves[0].M2.y == 210
 	
 	# Segment
-	assert(rp.curves[1].M1.x == 80)
-	assert(rp.curves[1].M1.y == 210)
-	assert(rp.curves[1].M2.x == 120)
-	assert(rp.curves[1].M2.y == 210)
+	assert rp.curves[1].M1.x == 80
+	assert rp.curves[1].M1.y == 210
+	assert rp.curves[1].M2.x == 120
+	assert rp.curves[1].M2.y == 210
 	
 	# Arc
-	assert(rp.curves[2].M1.x == 120)
-	assert(rp.curves[2].M1.y == 210)
-	assert(rp.curves[2].M2.x == 120)
-	assert(rp.curves[2].M2.y == 80)
-	assert(rp.curves[2].C.x == -10)
-	assert(rp.curves[2].C.y == 145)
+	assert rp.curves[2].M1.x == 120
+	assert rp.curves[2].M1.y == 210
+	assert rp.curves[2].M2.x == 120
+	assert rp.curves[2].M2.y == 80
+	assert rp.curves[2].C.x == -10
+	assert rp.curves[2].C.y == 145
 	
 	# Segment
-	assert(rp.curves[3].M1.x == 120)
-	assert(rp.curves[3].M1.y == 80)
-	assert(rp.curves[3].M2.x == 80)
-	assert(rp.curves[3].M2.y == 80)
+	assert rp.curves[3].M1.x == 120
+	assert rp.curves[3].M1.y == 80
+	assert rp.curves[3].M2.x == 80
+	assert rp.curves[3].M2.y == 80
