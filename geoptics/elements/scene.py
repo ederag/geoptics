@@ -106,8 +106,7 @@ class Scene(object):
 				raise KeyError()
 			yield cls, item_config
 		else:
-			logger.error(("neither 'Regions', 'Sources', nor 'Class'"
-			              "found").format(name))
+			logger.error("neither 'Regions', 'Sources', nor 'Class' found")
 			raise KeyError()
 	
 	def clear(self):
