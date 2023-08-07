@@ -20,9 +20,9 @@
 import pytest
 
 
-if not pytest.config.getoption("--test-scripts"):
-	pytest.skip("--test-scripts option not given",
-	            allow_module_level=True)
+# global file marker
+# The custom "script" marker is defined in the pytest section of setup.cfg
+pytestmark = pytest.mark.script
 
 
 def test_main(script_runner):

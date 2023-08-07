@@ -28,15 +28,15 @@ check:
 	
 	# this one is recommended by
 	# http://docs.pytest.org/en/latest/goodpractices.html#integrating-with-setuptools-python-setup-py-test-pytest-runner
-	python3 setup.py test --addopts "-rs --doctest-modules"
+	python3 setup.py test --addopts "-rs --doctest-modules -m \"not script\""
 	flake8 geoptics/ tests/ setup.py
 
 vcheck:
-	python3 setup.py test --addopts "-v -rs --doctest-modules"
+	python3 setup.py test --addopts "-v -rs --doctest-modules -m \"not script\""
 	flake8 geoptics/ tests/ setup.py
 
 vvcheck:
-	python3 setup.py test --addopts "-vv -rs --doctest-modules"
+	python3 setup.py test --addopts "-vv -rs --doctest-modules -m \"not script\""
 	flake8 geoptics/ tests/ setup.py
 
 coverage:
