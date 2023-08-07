@@ -23,10 +23,9 @@ class TestConfig:
 		assert 'Class' in region_config
 		assert 'n' in region_config
 	
-	# with classmethod this function won't be found by py.test
-	# it will be called in test_source
+	# to be called in test_source
 	@classmethod
-	def test_ray(cls, ray):
+	def _test_ray(cls, ray):
 		ray_config = ray.config
 		assert 'parts' in ray_config
 		assert len(ray_config['parts']) == len(ray.parts)
@@ -42,4 +41,4 @@ class TestConfig:
 		# maybe testing all rays is a bit overkill,
 		# but better catch inconsistencies between sources early
 		for ray in source.rays:
-			TestConfig.test_ray(ray)
+			TestConfig._test_ray(ray)
