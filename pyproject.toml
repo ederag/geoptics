@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+# look only in these directories
+# this avoids catching of setup.py by the --doctest-modules
+required_plugins = [
+	"pytest-qt",
+	"pytest-xvfb",
+	"pytest-console-scripts",
+]
+testpaths = [
+	"geoptics",
+	"tests",
+]
+markers = [
+	"script: mark test as running a script (deselect with '-m \"not script\"')",
+]
