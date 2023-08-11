@@ -20,32 +20,23 @@
 """Define :term:`Lines`."""
 
 
-from collections import namedtuple
+from typing import NamedTuple
 from math import cos, pi, sin
 
 from geoptics.elements.vector import Point, Vector
 
 
-Intersection = namedtuple('Intersection', 'p, s, eN, eT')
-Intersection.__doc__ += (
-	""": Intersection between a :class:`Line` and another element
+class Intersection(NamedTuple):
+	"""Intersection between a :class:`Line` and another element"""
 	
-	Attributes:
-		p (:class:`.Point`): point of intersection
-		
-		s (float): `s` multiplier of the :class:`Line` (p0, u0),
-		            such that ``p = p0 + u0 * s``
-		
-		eN (:class:`.Vector`): unit vector normal to the other element,
-		                       at the intersection
-		
-		eT (:class:`.Vector`): unit vector tangent to the other element,
-	                           at the intersection
-	"""
-)
-
-# in python 3.5 it will be possible to set the doctring for properties:
-#Intersection.p.__doc__ = "`Point` of intersection"
+	#: point of intersection
+	p: Point
+	#: `s` multiplier of the :class:`Line` (p0, u0), such that ``p = p0 + u0 * s``
+	s: float
+	#: unit vector normal to the other element, at the intersection
+	eN: Vector
+	#: unit vector tangent to the other element, at the intersection
+	eT: Vector
 
 
 class Line(object):
