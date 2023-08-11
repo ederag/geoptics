@@ -145,7 +145,7 @@ html_theme_options = {
     #'sticky_navigation': True,
     # the default theme is restricted to 4 anyway, and messed up for more:
     # https://github.com/rtfd/sphinx_rtd_theme/issues/540
-    'navigation_depth': 3,
+    'navigation_depth': 4,
     #'includehidden': True,
     #'titles_only': False
 }
