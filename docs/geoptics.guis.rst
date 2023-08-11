@@ -17,13 +17,10 @@ Subpackages
 	geoptics.guis.qt
 
 
-Submodules
-----------
+Old tkinter version
+-------------------
 
-geoptics.guis.tk module
------------------------
-
-This module is not maintained any longer since v0.3. 
+The geoptics.guis.tk module is no longer maintained since v0.3.
 It might be possible to make it work again if there is enough interest.
 
 .. 
