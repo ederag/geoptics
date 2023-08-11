@@ -143,9 +143,7 @@ html_theme_options = {
     # Toc options
     #'collapse_navigation': False,
     #'sticky_navigation': True,
-    # the default theme is restricted to 4 anyway, and messed up for more:
-    # https://github.com/rtfd/sphinx_rtd_theme/issues/540
-    'navigation_depth': 4,
+    'navigation_depth': 5,
     #'includehidden': True,
     #'titles_only': False
 }

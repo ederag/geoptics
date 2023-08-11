@@ -13,7 +13,8 @@ Subpackages
 
 .. toctree::
 
-    geoptics.guis.qt
+	geoptics.guis.qt
+
 
 Submodules
 ----------
