@@ -51,7 +51,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'geoptics'
-copyright = u'2018, Ederag'
+copyright = u'2023, ederag'
 
 
 # The version info for the project you're documenting, acts as replacement for
@@ -241,7 +241,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   ('index', 'geoptics.tex', u'geoptics Documentation',
-   u'Ederag', 'manual'),
+   u'ederag', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -308,7 +308,7 @@ texinfo_documents = [
 epub_title = u'geoptics'
 epub_author = u'Ederag'
 epub_publisher = u'Ederag'
-epub_copyright = u'2014, Ederag'
+epub_copyright = u'2023, Ederag'
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = u'geoptics'
