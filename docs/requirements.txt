@@ -1,4 +1,4 @@
-sphinx
+sphinx==6.2
 sphinxcontrib-napoleon
 sphinx_rtd_theme
 PyQt5
