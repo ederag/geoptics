@@ -12,6 +12,7 @@ Subpackages
 -----------
 
 .. toctree::
+	:maxdepth: 1
 
 	geoptics.guis.qt
 
