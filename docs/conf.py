@@ -376,11 +376,15 @@ epub_exclude_files = ['search.html']
 
 
 # autodoc settings
-autodoc_default_flags = ['members', 'undoc-members', 'show-inheritance']
+autodoc_default_options = {
+	'members': True,
+	'undoc-members': True,
+	'show-inheritance': True
+}
 # for developer, uncomment next line
-autodoc_default_flags += ['private-members']
+autodoc_default_options['private-members'] = True
 # The next one shows __*__ members
-#autodoc_default_flags += ['special-members']
+#autodoc_default_options['special-members'] = True
 
 #autoclass_content = "both"
 
